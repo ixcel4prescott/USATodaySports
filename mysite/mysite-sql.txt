@@ -1,0 +1,6 @@
+ do it like this for a database named foo_db:
+
+create database foo_db;
+create user foo_user identified by 'foo_password';
+grant all on foo_db.* to 'foo_user'@'%';
+flush privileges;

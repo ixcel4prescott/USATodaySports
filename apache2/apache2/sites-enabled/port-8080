@@ -1,0 +1,25 @@
+<VirtualHost *:8080>
+	ServerAdmin webmaster@localhost
+
+	DocumentRoot /home/jreed/src/ssapi/public/
+	<Directory />
+		Options FollowSymLinks
+		AllowOverride None
+	</Directory>
+	<Directory /home/jreed/src/ssapi/public/>
+		AllowOverride All
+    RailsEnv test
+		Options -MultiViews
+		Order allow,deny
+		allow from all
+	</Directory>
+
+	ErrorLog ${APACHE_LOG_DIR}/error.log
+
+	# Possible values include: debug, info, notice, warn, error, crit,
+	# alert, emerg.
+	LogLevel warn
+
+	CustomLog ${APACHE_LOG_DIR}/access.log combined
+
+</VirtualHost>
